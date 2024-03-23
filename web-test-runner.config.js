@@ -1,4 +1,4 @@
-import { esbuildPlugin } from '@web/dev-server-esbuild';
+const esbuildPlugin = require('@web/dev-server-esbuild').esbuildPlugin;
 
 module.exports = {
   files: 'test/*-test.ts',
