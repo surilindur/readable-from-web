@@ -1,8 +1,8 @@
 # Readable from Web
 
-[![Build status](https://github.com/rubensworks/fetch-sparql-endpoint.js/workflows/CI/badge.svg)](https://github.com/rubensworks/fetch-sparql-endpoint.js/actions?query=workflow%3ACI)
-[![Coverage Status](https://coveralls.io/repos/github/rubensworks/fetch-sparql-endpoint.js/badge.svg?branch=master)](https://coveralls.io/github/rubensworks/fetch-sparql-endpoint.js?branch=master)
-[![npm version](https://badge.fury.io/js/fetch-sparql-endpoint.svg)](https://www.npmjs.com/package/fetch-sparql-endpoint)
+[![CI](https://github.com/surilindur/readable-from-web/actions/workflows/ci.yml/badge.svg)](https://github.com/surilindur/readable-from-web/actions/workflows/ci.yml)
+[![Coverage](https://coveralls.io/repos/github/surilindur/readable-from-web/badge.svg?branch=main)](https://coveralls.io/github/surilindur/readable-from-web?branch=main)
+[![Version](https://badge.fury.io/js/@comunica/readable-from-web.svg)](https://www.npmjs.com/package/@comunica/readable-from-web)
 
 Experimental implementation of [WHATWG `ReadableStream`](https://streams.spec.whatwg.org/#rs-class)
 to [`readable-stream`](https://github.com/nodejs/readable-stream) `Readable` conversion.
