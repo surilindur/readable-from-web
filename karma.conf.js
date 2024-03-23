@@ -1,11 +1,7 @@
 module.exports = function(config) {
   config.set({
     basePath: '',
-    files: [
-      'index.js',
-      'lib/*.js',
-      'test/*.js',
-    ],
+    files: [ 'lib/*.ts' ],
     frameworks: [ 'mocha', 'chai', 'karma-typescript' ],
     reporters: [ 'progress', 'karma-typescript' ],
     preprocessors: {
@@ -15,7 +11,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: [ 'firefox', 'chrome', 'edge' ],
+    browsers: [ 'FirefoxHeadless', 'Chrome', 'Edge' ],
     singleRun: true,
     concurrency: Number.POSITIVE_INFINITY,
   });
