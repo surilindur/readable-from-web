@@ -1,14 +1,20 @@
-# Readable from Web
+# readable-from-web
 
 [![CI](https://github.com/surilindur/readable-from-web/actions/workflows/ci.yml/badge.svg)](https://github.com/surilindur/readable-from-web/actions/workflows/ci.yml)
 [![Coverage](https://coveralls.io/repos/github/surilindur/readable-from-web/badge.svg?branch=main)](https://coveralls.io/github/surilindur/readable-from-web?branch=main)
 [![Version](https://badge.fury.io/js/@comunica/readable-from-web.svg)](https://www.npmjs.com/package/@comunica/readable-from-web)
 
-Experimental implementation of [WHATWG `ReadableStream`](https://streams.spec.whatwg.org/#rs-class)
-to [`readable-stream`](https://github.com/nodejs/readable-stream) `Readable` conversion.
-This code tries to follow the functionality of Node's own [implementation](https://github.com/nodejs/node/blob/0b676736a0e9ab4939c195a516aa7e82fcd839aa/lib/internal/webstreams/adapters.js#L512)
+An experimental converter from [WHATWG `ReadableStream`](https://streams.spec.whatwg.org/#rs-class)
+to [`readable-stream`](https://github.com/nodejs/readable-stream) `Readable`,
+loosely following the functionality of Node's own [implementation](https://github.com/nodejs/node/blob/0b676736a0e9ab4939c195a516aa7e82fcd839aa/lib/internal/webstreams/adapters.js#L512)
 of [`Readable.fromWeb`](https://nodejs.org/api/stream.html#streamreadablefromwebreadablestream-options)
 to the extent possible without introducing anything new.
+
+> [!CAUTION]
+> The converter subclasses `Readable` from `readable-stream` for its implementation.
+> The `_read` and `destroy` of it are synchronous methods, but internally the converter uses promises.
+> Wherever possible, errors are caught via `catch` and forwarded to the outgoing stream.
+> However, the `destroy` function completely ignores any errors from the WHATWG stream `close` method.
 
 ## Install
 
