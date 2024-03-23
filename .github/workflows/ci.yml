@@ -80,7 +80,7 @@ jobs:
       - run: yarn run build
       - uses: coactions/setup-xvfb@v1
         with:
-          run: yarn web-test-runner test/*-test.ts --node-resolve --playwright --browsers ${{ matrix.browser }}
+          run: yarn web-test-runner --playwright --browsers ${{ matrix.browser }}
 
   coveralls:
     needs:
