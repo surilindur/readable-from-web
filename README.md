@@ -32,6 +32,4 @@ async function example(request, init) {
 
 ## License
 
-This code is copyrighted by [the Comunica Association](https://comunica.dev/association/)
-and [Ghent University – imec](http://idlab.ugent.be/)
-and released under the [MIT license](http://opensource.org/licenses/MIT).
+This code is released under the [MIT license](http://opensource.org/licenses/MIT).
