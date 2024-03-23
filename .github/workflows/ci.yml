@@ -99,10 +99,10 @@ jobs:
       - uses: browser-actions/setup-edge@v1
         if: matrix.browser == 'edge'
         with:
-          edge-version: latest
-      - run: karma start --browsers=Firefox
+          edge-version: stable
+      - run: yarn karma start --browsers=Firefox
         if: matrix.browser == 'firefox'
-      - run: karma start --browsers=Chrome
+      - run: yarn karma start --browsers=Chrome
         if: matrix.browser == 'chrome'
-      - run: karma start --browsers=Edge
+      - run: yarn karma start --browsers=Edge
         if: matrix.browser == 'edge'
