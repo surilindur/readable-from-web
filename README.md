@@ -10,12 +10,6 @@ loosely following the functionality of Node's own [implementation](https://githu
 of [`Readable.fromWeb`](https://nodejs.org/api/stream.html#streamreadablefromwebreadablestream-options)
 to the extent possible without introducing anything new.
 
-> [!CAUTION]
-> The converter subclasses `Readable` from `readable-stream` for its implementation.
-> The `_read` and `destroy` of it are synchronous methods, but internally the converter uses promises.
-> Wherever possible, errors are caught via `catch` and forwarded to the outgoing stream.
-> However, the `destroy` function completely ignores any errors from the WHATWG stream `close` method.
-
 ## Install
 
 This package can be installed via [npm](https://www.npmjs.com/package/@comunica/readable-from-web).
