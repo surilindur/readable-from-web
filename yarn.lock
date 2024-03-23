@@ -524,6 +524,7 @@ __metadata:
     karma-coverage: "npm:^2.0.0"
     karma-edge-launcher: "npm:^0.4.0"
     karma-firefox-launcher: "npm:^2.0.0"
+    karma-mocha: "npm:^2.0.0"
     readable-stream: "npm:^4.0.0"
     readable-stream-node-to-web: "npm:^1.0.0"
     stream-to-string: "npm:^1.0.0"
@@ -5468,6 +5469,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"karma-mocha@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "karma-mocha@npm:2.0.1"
+  dependencies:
+    minimist: "npm:^1.2.3"
+  checksum: 10/f1ac8e3707788fcb8b19487f5ab421d7f5b84d860e25d1ac7fc049dd3aab5bf15148cccaa79f13c78ccb04fe5b53c8601acfe9b11aa871c58fe1152a1b845a71
+  languageName: node
+  linkType: hard
+
 "karma@npm:^6.0.0":
   version: 6.4.3
   resolution: "karma@npm:6.4.3"
@@ -5818,7 +5828,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.0, minimist@npm:^1.2.6":
+"minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.6":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8"
   checksum: 10/908491b6cc15a6c440ba5b22780a0ba89b9810e1aea684e253e43c4e3b8d56ec1dcdd7ea96dde119c29df59c936cde16062159eae4225c691e19c70b432b6e6f
