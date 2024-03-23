@@ -1,0 +1,9 @@
+.yarn
+coverage
+node_modules
+index.js
+index.js.map
+index.d.ts
+lib/*.js
+lib/*.js.map
+lib/*.d.ts

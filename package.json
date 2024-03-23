@@ -1,0 +1,63 @@
+{
+  "name": "@comunica/readable-from-web",
+  "version": "1.0.0",
+  "packageManager": "yarn@4.1.1",
+  "description": "Experimental converter from WHATWG ReadableStream to readable-stream Readable",
+  "license": "MIT",
+  "homepage": "https://github.com/comunica/readable-from-web",
+  "repository": "git@github.com:comunica/readable-from-web.git",
+  "bugs": {
+    "url": "https://github.com/comunica/readable-from-web/issues"
+  },
+  "main": "index.js",
+  "types": "index",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.js.map",
+    "lib/*.d.ts",
+    "lib/*.js",
+    "lib/*.js.map"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "readable-stream": "^4.0.0"
+  },
+  "devDependencies": {
+    "@rubensworks/eslint-config": "^3.0.0",
+    "@types/jest": "^29.0.0",
+    "@types/readable-stream": "^4.0.0",
+    "eslint": "8.48.0",
+    "husky": "^4.0.0",
+    "jest": "^29.0.0",
+    "readable-stream-node-to-web": "^1.0.0",
+    "stream-to-string": "^1.0.0",
+    "streamify-string": "^1.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint && yarn run build && yarn run test"
+    }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "^.+\\.js"
+    ],
+    "testRegex": "^.+-test\\.ts$",
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "collectCoverage": true,
+    "testEnvironment": "node"
+  }
+}
