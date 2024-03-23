@@ -71,9 +71,9 @@ jobs:
     strategy:
       matrix:
         browser:
-          - ChromeHeadless
-          - FirefoxHeadless
-          - Edge
+          - firefox
+          - chrome
+          - edge
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v4
@@ -93,7 +93,7 @@ jobs:
         with:
           firefox-version: latest
       - uses: browser-actions/setup-chrome@v1
-        if: matrix.browser == 'ChromeHeadless'
+        if: matrix.browser == 'chrome'
         with:
           chrome-version: latest
       - uses: browser-actions/setup-edge@v1
