@@ -102,7 +102,7 @@ jobs:
           edge-version: latest
       - run: karma start --browsers=Firefox
         if: matrix.browser == 'firefox'
-      - run: karma start --browsers=Chromium
-        if: matrix.browser == 'chromium'
+      - run: karma start --browsers=Chrome
+        if: matrix.browser == 'chrome'
       - run: karma start --browsers=Edge
         if: matrix.browser == 'edge'
