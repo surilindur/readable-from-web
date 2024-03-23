@@ -25,7 +25,7 @@ jobs:
       - run: yarn install --immutable
       - run: yarn run lint
 
-  test:
+  jest:
     needs: lint
     runs-on: ${{ matrix.os }}
     strategy:
@@ -96,7 +96,7 @@ jobs:
 
   coveralls:
     needs:
-      - test
+      - jest
       - browser
     runs-on: ubuntu-latest
     steps:
