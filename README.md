@@ -15,7 +15,7 @@ to the extent possible without introducing anything new.
 This package can be installed via [npm](https://www.npmjs.com/package/@comunica/readable-from-web).
 
 ```bash
-$ npm install @comunica/readable-from-web
+npm install @comunica/readable-from-web
 ```
 
 ## Usage
