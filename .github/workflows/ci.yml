@@ -61,9 +61,9 @@ jobs:
     strategy:
       matrix:
         browser:
-          - FirefoxHeadless
-          - Chrome
-          - Edge
+          - firefox
+          - chromium
+          - webkit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v4
@@ -78,21 +78,9 @@ jobs:
       - run: corepack enable
       - run: yarn install --immutable
       - run: yarn run build
-      - uses: browser-actions/setup-firefox@v1
-        if: matrix.browser == 'FirefoxHeadless'
-        with:
-          firefox-version: latest
-      - uses: browser-actions/setup-chrome@v1
-        if: matrix.browser == 'Chrome'
-        with:
-          chrome-version: latest
-      - uses: browser-actions/setup-edge@v1
-        if: matrix.browser == 'Edge'
-        with:
-          edge-version: stable
       - uses: coactions/setup-xvfb@v1
         with:
-          run: yarn karma start --browsers=${{ matrix.browser }}
+          run: yarn web-test-runner test/*-test.ts --node-resolve --playwright --browsers ${{ matrix.browser }}
 
   coveralls:
     needs:
