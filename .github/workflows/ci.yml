@@ -56,16 +56,6 @@ jobs:
           flag-name: run-${{ matrix.node-version }}
           parallel: true
 
-  coveralls:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Consolidate test coverage from different jobs
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel-finished: true
-
   browser:
     needs: lint
     strategy:
@@ -103,3 +93,15 @@ jobs:
       - uses: coactions/setup-xvfb@v1
         with:
           run: yarn karma start --browsers=${{ matrix.browser }}
+
+  coveralls:
+    needs:
+      - test
+      - browser
+    runs-on: ubuntu-latest
+    steps:
+      - name: Consolidate test coverage from different jobs
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel-finished: true
