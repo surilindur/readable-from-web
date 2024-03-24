@@ -1,8 +1,8 @@
-# readable-from-web
+# Readable from Web
 
-[![CI](https://github.com/surilindur/readable-from-web/actions/workflows/ci.yml/badge.svg)](https://github.com/surilindur/readable-from-web/actions/workflows/ci.yml)
-[![Coverage](https://coveralls.io/repos/github/surilindur/readable-from-web/badge.svg?branch=main)](https://coveralls.io/github/surilindur/readable-from-web?branch=main)
-[![Version](https://badge.fury.io/js/@comunica/readable-from-web.svg)](https://www.npmjs.com/package/@comunica/readable-from-web)
+[![CI](https://github.com/surilindur/readable-from-web.js/actions/workflows/ci.yml/badge.svg)](https://github.com/surilindur/readable-from-web.js/actions/workflows/ci.yml)
+[![Coverage](https://coveralls.io/repos/github/surilindur/readable-from-web.js/badge.svg?branch=main)](https://coveralls.io/github/surilindur/readable-from-web.js?branch=main)
+[![Version](https://badge.fury.io/js/readable-from-web.svg)](https://www.npmjs.com/package/readable-from-web)
 
 An experimental converter from [WHATWG `ReadableStream`](https://streams.spec.whatwg.org/#rs-class)
 to [`readable-stream`](https://github.com/nodejs/readable-stream) `Readable`,
@@ -12,16 +12,16 @@ to the extent possible without introducing anything new.
 
 ## Install
 
-This package can be installed via [npm](https://www.npmjs.com/package/@comunica/readable-from-web).
+This package can be installed via [npm](https://www.npmjs.com/package/readable-from-web).
 
 ```bash
-npm install @comunica/readable-from-web
+npm install readable-from-web
 ```
 
 ## Usage
 
 ```js
-import { readableFromWeb } from '@comunica/readable-from-web';
+import { readableFromWeb } from 'readable-from-web';
 
 async function example(request, init) {
   const response = await fetch(request, init);
