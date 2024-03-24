@@ -1,16 +1,10 @@
 /** @type {import('jest').Config} */
 module.exports = {
-  transform: {
-    '^.+\\.ts$': 'ts-jest',
-  },
-  transformIgnorePatterns: [
-    '^.+\\.js',
-  ],
-  testRegex: '^.+-test\\.ts$',
-  moduleFileExtensions: [
-    'js',
-    'ts',
-  ],
   collectCoverage: true,
+  transform: {
+    '.+\\.ts': 'ts-jest',
+  },
+  testRegex: [ 'test/?(.+)+(spec|test).[tj]s' ],
   testEnvironment: 'node',
+  moduleFileExtensions: [ 'js', 'ts' ],
 };
