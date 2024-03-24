@@ -36,7 +36,7 @@ class ReadableFromWeb<T> extends Readable {
 }
 
 function readableFromWeb<T>(stream: ReadableStream<T>, options?: ReadableOptions): Readable {
-  return new ReadableFromWeb(stream, options);
+  return new ReadableFromWeb<T>(stream, options);
 }
 
 export { ReadableFromWeb, readableFromWeb };
