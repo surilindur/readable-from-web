@@ -1,9 +1,9 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "target": "es6",
+    "target": "esnext",
     "lib": [
-      "es6",
+      "esnext",
       "dom"
     ],
     "module": "commonjs",

@@ -11,13 +11,13 @@ const readableToWeb: ReadableToWeb = require('readable-stream-node-to-web');
 const streamToString: StreamToString = require('stream-to-string');
 const stringToStream: StringToStream = require('streamify-string');
 
-describe('readableFromWeb', () => {
+describe('ReadableFromWeb', () => {
   let originalStream: Readable;
   let whatwgStream: ReadableStream;
   let readableStreamReadable: Readable;
   let expectedError: Error;
 
-  beforeEach(() => {
+  beforeEach(async() => {
     originalStream = stringToStream('abc');
     whatwgStream = readableToWeb(originalStream);
     readableStreamReadable = readableFromWeb(whatwgStream);
