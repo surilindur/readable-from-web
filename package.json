@@ -1,5 +1,5 @@
 {
-  "name": "@comunica/readable-from-web",
+  "name": "readable-from-web",
   "type": "commonjs",
   "version": "1.0.0",
   "packageManager": "yarn@4.1.1",
@@ -20,7 +20,8 @@
   "scripts": {
     "lint": "eslint .",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky"
   },
   "dependencies": {
     "readable-stream": "^4.0.0"
@@ -29,18 +30,13 @@
     "@rubensworks/eslint-config": "^3.0.0",
     "@types/jest": "^29.0.0",
     "@types/readable-stream": "^4.0.0",
-    "eslint": "8.48.0",
-    "husky": "^4.0.0",
+    "eslint": "^8.0.0",
+    "husky": "^9.0.0",
     "jest": "^29.0.0",
     "readable-stream-node-to-web": "^1.0.0",
     "stream-to-string": "^1.0.0",
     "streamify-string": "^1.0.0",
     "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run lint && yarn run build && yarn run test"
-    }
   }
 }

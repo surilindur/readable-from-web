@@ -1,10 +1,10 @@
 import { Readable, type ReadableOptions } from 'readable-stream';
 
-class ReadableFromWeb<R> extends Readable {
-  private readonly reader: ReadableStreamDefaultReader<R>;
+class ReadableFromWeb<T> extends Readable {
+  private readonly reader: ReadableStreamDefaultReader<T>;
   private readerClosed: boolean;
 
-  public constructor(stream: ReadableStream<R>, options?: ReadableOptions) {
+  public constructor(stream: ReadableStream<T>, options?: ReadableOptions) {
     super(options);
     this.reader = stream.getReader();
     this.readerClosed = false;
@@ -16,6 +16,7 @@ class ReadableFromWeb<R> extends Readable {
     });
   }
 
+  // eslint-disable-next-line ts/naming-convention
   public _read(): void {
     this.reader.read()
       .then(chunk => this.push(chunk.done ? null : chunk.value))
@@ -34,7 +35,7 @@ class ReadableFromWeb<R> extends Readable {
   }
 }
 
-function readableFromWeb<R>(stream: ReadableStream<R>, options?: ReadableOptions): Readable {
+function readableFromWeb<T>(stream: ReadableStream<T>, options?: ReadableOptions): Readable {
   return new ReadableFromWeb(stream, options);
 }
 
