@@ -12,11 +12,15 @@ to the extent possible without introducing anything new.
 
 ## Install
 
+<!--
 This package can be installed via [npm](https://www.npmjs.com/package/readable-from-web).
 
 ```bash
 npm install readable-from-web
 ```
+-->
+
+TBD
 
 ## Usage
 
