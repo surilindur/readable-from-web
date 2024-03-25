@@ -1,7 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  testMatch: 'test/*-spec.ts',
+  testMatch: /test\/?(.+)+browser\.[tj]s$/u,
   reporter: process.env.CI ? 'github' : 'list',
   preserveOutput: 'never',
   webServer: {

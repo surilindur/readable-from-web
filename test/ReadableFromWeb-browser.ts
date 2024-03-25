@@ -5,9 +5,10 @@ import { readableFromWeb } from '../lib/index';
 const index = { readableFromWeb };
 const streamtostring = require('stream-to-string');
 
-test('webpack bundle', async({ page }) => {
+test('ReadableFromWeb', async({ page }) => {
   await page.goto('http://localhost:4000/');
 
+  // Add the script bundles to the webpage, served directly by webpack dev server
   await page.addScriptTag({ url: '/index.js', type: 'text/javascript' });
   await page.addScriptTag({ url: '/streamtostring.js', type: 'text/javascript' });
 
@@ -16,7 +17,7 @@ test('webpack bundle', async({ page }) => {
     const whatwgStream = response.body!;
     const readableStreamReadable = index.readableFromWeb(whatwgStream);
     return readableStreamReadable.constructor.name;
-  })).resolves.toBe('ReadableFromWeb');
+  }), 'is returned by readableFromWeb').resolves.toBe('ReadableFromWeb');
 
   await expect(page.evaluate(async() => {
     const response = await fetch('/');
@@ -24,5 +25,5 @@ test('webpack bundle', async({ page }) => {
     const readableStreamReadable = index.readableFromWeb(whatwgStream);
     const stringFromReadable = streamtostring(readableStreamReadable);
     return stringFromReadable;
-  })).resolves.toMatch(/^<!DOCTYPE html>/u);
+  }), 'successfully converts WHATWG stream to Readable').resolves.toMatch(/^<!DOCTYPE html>/u);
 });
