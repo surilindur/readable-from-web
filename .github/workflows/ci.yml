@@ -27,7 +27,7 @@ jobs:
       - run: yarn install --immutable
       - run: yarn run lint
 
-  test:
+  node:
     needs: lint
     runs-on: ubuntu-latest
     strategy:
@@ -83,7 +83,7 @@ jobs:
 
   coveralls:
     needs:
-      - test
+      - node
       - browser
     runs-on: ubuntu-latest
     steps:
