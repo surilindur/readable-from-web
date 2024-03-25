@@ -1,7 +1,7 @@
 # Readable from Web
 
-[![CI](https://github.com/surilindur/readable-from-web.js/actions/workflows/ci.yml/badge.svg)](https://github.com/surilindur/readable-from-web.js/actions/workflows/ci.yml)
-[![Coverage](https://coveralls.io/repos/github/surilindur/readable-from-web.js/badge.svg?branch=main)](https://coveralls.io/github/surilindur/readable-from-web.js?branch=main)
+[![CI](https://github.com/comunica/readable-from-web.js/actions/workflows/ci.yml/badge.svg)](https://github.com/comunica/readable-from-web.js/actions/workflows/ci.yml)
+[![Coverage](https://coveralls.io/repos/github/comunica/readable-from-web.js/badge.svg?branch=main)](https://coveralls.io/github/comunica/readable-from-web.js?branch=main)
 [![Version](https://badge.fury.io/js/readable-from-web.svg)](https://www.npmjs.com/package/readable-from-web)
 
 An experimental converter from [WHATWG `ReadableStream`](https://streams.spec.whatwg.org/#rs-class)
@@ -12,15 +12,11 @@ to the extent possible without introducing anything new.
 
 ## Install
 
-<!--
 This package can be installed via [npm](https://www.npmjs.com/package/readable-from-web).
 
 ```bash
 npm install readable-from-web
 ```
--->
-
-TBD
 
 ## Usage
 
