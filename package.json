@@ -1,12 +1,15 @@
 {
   "name": "readable-from-web",
   "type": "commonjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "packageManager": "yarn@4.1.1",
   "description": "Experimental converter from WHATWG ReadableStream to readable-stream Readable",
   "license": "MIT",
   "homepage": "https://github.com/comunica/readable-from-web",
-  "repository": "git@github.com:comunica/readable-from-web.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comunica/readable-from-web.js"
+  },
   "bugs": {
     "url": "https://github.com/comunica/readable-from-web/issues"
   },
