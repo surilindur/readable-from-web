@@ -6,7 +6,7 @@ export default defineConfig({
   preserveOutput: 'never',
   webServer: {
     command: 'yarn webpack-dev-server',
-    url: 'http://127.0.0.1:4000',
+    url: 'http://localhost:4000/',
     reuseExistingServer: !process.env.CI,
     stdout: 'ignore',
     stderr: 'pipe',
