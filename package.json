@@ -5,7 +5,7 @@
   "packageManager": "yarn@4.1.1",
   "description": "Experimental converter from WHATWG ReadableStream to readable-stream Readable",
   "license": "MIT",
-  "homepage": "https://github.com/comunica/readable-from-web",
+  "homepage": "https://github.com/comunica/readable-from-web.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/comunica/readable-from-web.js"
