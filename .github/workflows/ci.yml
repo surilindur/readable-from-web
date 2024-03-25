@@ -83,7 +83,6 @@ jobs:
   coveralls:
     needs:
       - node
-      - browser
     runs-on: ubuntu-latest
     steps:
       - name: Consolidate test coverage from different jobs
