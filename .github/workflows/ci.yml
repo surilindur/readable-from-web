@@ -12,5 +12,59 @@ concurrency:
 
 jobs:
 
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+      - uses: actions/cache@v4
+        with:
+          path: '**/.yarn'
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      - run: corepack enable
+      - run: yarn install --immutable
+      - run: yarn run lint
+
   test:
-    uses: ./.github/workflows/test.yml
+    needs: lint
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        node-version:
+          - 18.x
+          - 20.x
+          - latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: git config --global core.autocrlf input
+      - uses: actions/cache@v4
+        with:
+          path: '**/.yarn'
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      - run: corepack enable
+      - run: yarn install --immutable
+      - run: yarn run build
+      - run: yarn run test
+      - uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.github_token }}
+          flag-name: run-${{ matrix.node-version }}
+          parallel: true
+
+  coveralls:
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Consolidate test coverage from different jobs
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel-finished: true
