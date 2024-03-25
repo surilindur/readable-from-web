@@ -14,15 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/cache@v4
-        with:
-          path: '**/.yarn'
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/setup-node@v4
         with:
           node-version: latest
+      - uses: actions/cache@v4
+        id: cache-yarn
+        with:
+          path: '**/.yarn'
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}  
       - run: corepack enable
       - run: yarn install --immutable
+        if: steps.cache-yarn.outputs.cache-hit != 'true'
       - run: yarn run lint
 
   test:
@@ -37,17 +39,19 @@ jobs:
           - 20.x
           - latest
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: git config --global core.autocrlf input
-      - uses: actions/checkout@v4
       - uses: actions/cache@v4
+        id: cache-yarn
         with:
           path: '**/.yarn'
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - run: corepack enable
       - run: yarn install --immutable
+        if: steps.cache-yarn.outputs.cache-hit != 'true'
       - run: yarn run build
       - run: yarn run test
       - uses: coverallsapp/github-action@v2

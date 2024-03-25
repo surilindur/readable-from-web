@@ -1,7 +1,7 @@
 {
   "name": "readable-from-web",
   "type": "commonjs",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "packageManager": "yarn@4.1.1",
   "description": "Experimental converter from WHATWG ReadableStream to readable-stream Readable",
   "license": "MIT",
