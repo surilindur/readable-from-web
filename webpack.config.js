@@ -6,7 +6,6 @@ module.exports = {
     port: 4000,
     host: 'localhost',
     static: path.resolve(__dirname),
-    allowedHosts: 'all',
   },
   entry: {
     index: './lib/index.ts',
@@ -16,14 +15,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/u,
+        test: /\.ts$/u,
         use: 'ts-loader',
         exclude: /node_modules/u,
       },
     ],
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: [ '.ts', '.js' ],
   },
   output: {
     library: '[name]',
