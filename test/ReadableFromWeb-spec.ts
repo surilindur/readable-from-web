@@ -6,7 +6,7 @@ const index = { readableFromWeb };
 const streamtostring = require('stream-to-string');
 
 test('webpack bundle', async({ page }) => {
-  await page.goto('http://localhost:4000/index.js');
+  await page.goto('http://localhost:4000/');
 
   await page.addScriptTag({ url: '/index.js', type: 'text/javascript' });
   await page.addScriptTag({ url: '/streamtostring.js', type: 'text/javascript' });
