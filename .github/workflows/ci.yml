@@ -29,11 +29,9 @@ jobs:
 
   test:
     needs: lint
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os:
-          - ubuntu-latest
         node-version:
           - 18.x
           - 20.x
@@ -60,11 +58,9 @@ jobs:
 
   browser:
     needs: lint
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os:
-          - ubuntu-latest
         browser:
           - firefox
           - chromium
