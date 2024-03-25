@@ -10,4 +10,10 @@ module.exports = config([
       },
     },
   },
+  {
+    files: [ 'webpack.config.js' ],
+    rules: {
+      'import/no-nodejs-modules': 'off',
+    },
+  },
 ]);
