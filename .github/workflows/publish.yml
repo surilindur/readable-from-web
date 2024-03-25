@@ -5,8 +5,17 @@ on:
     types:
       - published
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+
+  test:
+    uses: ./.github/workflows/test.yml
+
   publish:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,9 +29,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - run: corepack enable
       - run: yarn install --immutable
-      - run: yarn run lint
       - run: yarn run build
-      - run: yarn run test
       # TODO: when Yarn supports --provenance, switch to "yarn publish"
       - run: yarn pack
       - run: npm publish --provenance ./package.tgz
